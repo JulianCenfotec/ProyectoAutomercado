@@ -1,4 +1,4 @@
-﻿namespace LaboratorioMongo.Fabrica
+﻿namespace ProyectoDiseñoSoft.Fabrica
 {
     public interface IPersonaService<T>
     {

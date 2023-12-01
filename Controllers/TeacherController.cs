@@ -1,9 +1,9 @@
-﻿using LaboratorioMongo.Fabrica;
-using LaboratorioMongo.Modelos;
-using LaboratorioMongo.Servicios;
+﻿using ProyectoDiseñoSoft.Fabrica;
+using ProyectoDiseñoSoft.Modelos;
+using ProyectoDiseñoSoft.Servicios;
 using Microsoft.AspNetCore.Mvc;
 
-namespace LaboratorioMongo.Controllers
+namespace ProyectoDiseñoSoft.Controllers
 {
     public class TeacherController : Controller
     {

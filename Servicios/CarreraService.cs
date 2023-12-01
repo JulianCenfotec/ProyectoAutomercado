@@ -1,10 +1,10 @@
-﻿using LaboratorioMongo.Modelos;
+﻿using ProyectoDiseñoSoft.Modelos;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 
-namespace LaboratorioMongo.Servicios
+namespace ProyectoDiseñoSoft.Servicios
 {
-    public class CarreraService : 
+    public class CarreraService  
     {
         private readonly IMongoCollection<Empleados> _carreraCollection;
 

@@ -1,7 +1,7 @@
 ﻿using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Bson;
 
-namespace LaboratorioMongo.Modelos
+namespace ProyectoDiseñoSoft.Modelos
 {
     public class Teacher
     {

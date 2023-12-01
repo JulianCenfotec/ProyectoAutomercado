@@ -3,7 +3,7 @@ using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using System;
 
-namespace LaboratorioMongo.Modelos
+namespace ProyectoDiseñoSoft.Modelos
 {
     public class Facturacion
     {

@@ -1,8 +1,8 @@
-﻿using LaboratorioMongo.Modelos;
-using LaboratorioMongo.Servicios;
+﻿using ProyectoDiseñoSoft.Modelos;
+using ProyectoDiseñoSoft.Servicios;
 using Microsoft.AspNetCore.Mvc;
 
-namespace LaboratorioMongo.Controllers
+namespace ProyectoDiseñoSoft.Controllers
 {
     [ApiController]
     [Route("api/grupos")]

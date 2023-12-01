@@ -1,10 +1,10 @@
-﻿using LaboratorioMongo.Modelos;
-using LaboratorioMongo.Servicios;
+﻿using ProyectoDiseñoSoft.Modelos;
+using ProyectoDiseñoSoft.Servicios;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace LaboratorioMongo
+namespace ProyectoDiseñoSoft
 {
     
         public class Observador : IObservable<string>

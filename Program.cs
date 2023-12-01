@@ -1,5 +1,5 @@
-using LaboratorioMongo.Modelos;
-using LaboratorioMongo.Servicios;
+using ProyectoDiseñoSoft.Modelos;
+using ProyectoDiseñoSoft.Servicios;
 
 var builder = WebApplication.CreateBuilder(args);
 

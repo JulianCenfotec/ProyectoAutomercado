@@ -1,4 +1,4 @@
-namespace LaboratorioMongo
+namespace ProyectoDiseñoSoft
 {
     public class WeatherForecast
     {

@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using LaboratorioMongo.Modelos;
+using ProyectoDiseñoSoft.Modelos;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using LaboratorioMongo.Servicios;
+using ProyectoDiseñoSoft.Servicios;
 
-namespace LaboratorioMongo.Controllers
+namespace ProyectoDiseñoSoft.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

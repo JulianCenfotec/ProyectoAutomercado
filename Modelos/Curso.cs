@@ -1,6 +1,6 @@
 ﻿using MongoDB.Bson.Serialization.Attributes;
 
-namespace LaboratorioMongo.Modelos
+namespace ProyectoDiseñoSoft.Modelos
 {
     public class Curso : Observador
     {

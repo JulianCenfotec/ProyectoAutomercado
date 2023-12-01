@@ -1,14 +1,14 @@
-﻿using LaboratorioMongo.Modelos;
+﻿using ProyectoDiseñoSoft.Modelos;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 
-namespace LaboratorioMongo.Servicios
+namespace ProyectoDiseñoSoft.Servicios
 {
     public class UserService
     {
         private readonly IMongoCollection<User> _usersCollection;
 
-        public UserService(
+       /* public UserService(
             IOptions<UniversidadDatabaseSettings> universidadDatabaseSettings)
         {
             var mongoClient = new MongoClient(
@@ -20,7 +20,7 @@ namespace LaboratorioMongo.Servicios
             _usersCollection = mongoDatabase.GetCollection<User>(
                 universidadDatabaseSettings.Value.CollectionName);
         }
-
+       */
         public async Task<List<User>> GetAsync() =>
             await _usersCollection.Find(_ => true).ToListAsync();
 
