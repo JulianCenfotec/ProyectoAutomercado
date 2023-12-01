@@ -20,7 +20,7 @@ namespace ProyectoDiseñoSoft.Modelos
         {
             // Assign your actual MongoDB connection string and database name here
             ConnectionString = "mongodb+srv://jose:Cenfotec123@cluster0.vp492.mongodb.net/";
-            DatabaseName = "Universidad";
+            DatabaseName = "ProyectoDiseñoSoft";
         }
 
         public static DatabaseSettings Instance

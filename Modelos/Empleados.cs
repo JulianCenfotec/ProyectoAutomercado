@@ -7,18 +7,15 @@ namespace ProyectoDiseñoSoft.Modelos
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public string? Id { get; set; }
+        public string? _id { get; set; }
 
-        [BsonElement("Codigo")]
-        public string Codigo { get; set; } = null!;
-
-        [BsonElement("Nombre")]
-        public string Nombre { get; set; } = null!;
-
-        [BsonElement("Titulo")]
-        public string Titulo { get; set; } = null!;
-
-        [BsonElement("Cursos")]
-        public List<Curso> Cursos { get; set; } = new List<Curso>();
+        [BsonElement("nombre")]
+        public string nombre { get; set; }
+        [BsonElement("puesto")]
+        public string puesto { get; set; }
+        [BsonElement("telefono")]
+        public string telefono { get; set; }
+        [BsonElement("email")]
+        public string email { get; set; }
     }
 }

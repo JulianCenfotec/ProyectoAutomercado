@@ -7,22 +7,19 @@ namespace ProyectoDiseñoSoft.Modelos
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public string? Id { get; set; }
+        public string? _id { get; set; }
 
-        [BsonElement("Name")]
+        [BsonElement("Nombre")]
         public string Nombre { get; set; } = null!;
 
+        [BsonElement("Telefono")]
         public int Telefono { get; set; }
 
-        public string Email { get; set; } = null!;
+        [BsonElement("Direccion")]
+        public string Direccion { get; set; } = null!;
 
-        public string Clave { get; set; }
-
-        [BsonElement("FechaNacimiento")]
-        public DateTime FechaNacimiento { get; set; }
-
-        [BsonElement("Carrera")]
-        public string CarreraInscrita { get; set; }
+        [BsonElement("Email")]
+        public string Email { get; set; }
 
 
         public void OnCompleted()
@@ -37,8 +34,7 @@ namespace ProyectoDiseñoSoft.Modelos
 
         public void OnNext(string value)
         {
-            Console.WriteLine($"Estimado {this.Nombre}, se ha agregado el curso {value}.");
-          
+                                                                                                                                                                            
         }
     }
 

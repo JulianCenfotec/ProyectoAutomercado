@@ -2,28 +2,24 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using System;
+using static ProyectoDiseñoSoft.Modelos.Compras;
 
 namespace ProyectoDiseñoSoft.Modelos
 {
     public class Facturacion
     {
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
+        public string _id { get; set; }
+        public string cliente_id { get; set; }
+        public string empleado_id { get; set; }
+        public List<ProductoCantidad> productos { get; set; }
+        public decimal subtotal { get; set; }
+        public decimal impuestos { get; set; }
+        public decimal total { get; set; }
+        public string fecha { get; set; }
 
-        [BsonElement("Anio")]
-        public int Anio { get; set; }
-
-        [BsonElement("Estado")]
-        public bool Estado { get; set; }
-
-        [BsonElement("Numero")]
-        public int Numero { get; set; }
-
-        [BsonElement("FechaInicio")]
-        public DateTime FechaInicio { get; set; }
-
-        [BsonElement("FechaFinal")]
-        public DateTime FechaFinal { get; set; }
+        public void NotificarObservadores(string cliente_id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

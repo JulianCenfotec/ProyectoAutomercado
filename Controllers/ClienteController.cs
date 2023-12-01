@@ -6,24 +6,24 @@ using Microsoft.AspNetCore.Mvc;
 namespace ProyectoDiseñoSoft.Controllers
 {
     [ApiController]
-    [Route("api/alumnos")]
-    public class AlumnoController : Controller
+    [Route("api/Clientes")]
+    public class ClienteController : Controller
     {
-        private readonly IPersonaService<Cliente> _alumnoService;
+        private readonly IPersonaService<Cliente> _ClienteService;
 
-        public AlumnoController(IPersonaService<Cliente> alumnoService)
+        public ClienteController(IPersonaService<Cliente> ClienteService)
         {
-            _alumnoService = alumnoService;
+            _ClienteService = ClienteService;
         }
 
         [HttpGet]
         public async Task<List<Cliente>> Get() =>
-            await _alumnoService.GetAsync();
+            await _ClienteService.GetAsync();
 
         [HttpGet("{id:length(24)}")]
         public async Task<ActionResult<Cliente>> Get(string id)
         {
-            var user = await _alumnoService.GetAsync(id);
+            var user = await _ClienteService.GetAsync(id);
 
             if (user is null)
             {
@@ -34,26 +34,26 @@ namespace ProyectoDiseñoSoft.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post(Cliente newAlumno)
+        public async Task<IActionResult> Post(Cliente newCliente)
         {
-            await _alumnoService.CreateAsync(newAlumno);
+            await _ClienteService.CreateAsync(newCliente);
 
-            return CreatedAtAction(nameof(Get), new { id = newAlumno.Id }, newAlumno);
+            return CreatedAtAction(nameof(Get), new { id = newCliente._id }, newCliente);
         }
 
         [HttpPut("{id:length(24)}")]
-        public async Task<IActionResult> Update(string id, Cliente updatedAlumno)
+        public async Task<IActionResult> Update(string id, Cliente updatedCliente)
         {
-            var user = await _alumnoService.GetAsync(id);
+            var user = await _ClienteService.GetAsync(id);
 
             if (user is null)
             {
                 return NotFound();
             }
 
-            updatedAlumno.Id = user.Id;
+            updatedCliente._id = user._id;
 
-            await _alumnoService.UpdateAsync(id, updatedAlumno);
+            await _ClienteService.UpdateAsync(id, updatedCliente);
 
             return NoContent();
         }
@@ -61,14 +61,14 @@ namespace ProyectoDiseñoSoft.Controllers
         [HttpDelete("{id:length(24)}")]
         public async Task<IActionResult> Delete(string id)
         {
-            var user = await _alumnoService.GetAsync(id);
+            var user = await _ClienteService.GetAsync(id);
 
             if (user is null)
             {
                 return NotFound();
             }
 
-            await _alumnoService.RemoveAsync(id);
+            await _ClienteService.RemoveAsync(id);
 
             return NoContent();
         }
