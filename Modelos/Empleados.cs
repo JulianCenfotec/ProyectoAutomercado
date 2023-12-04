@@ -6,7 +6,7 @@ namespace ProyectoDiseñoSoft.Modelos
     public class Empleados
     {
         [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
+        [BsonElement("_id")]
         public string? _id { get; set; }
 
         [BsonElement("nombre")]

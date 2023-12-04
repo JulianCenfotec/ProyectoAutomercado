@@ -1,6 +1,7 @@
 ﻿using ProyectoDiseñoSoft.Modelos;
 using ProyectoDiseñoSoft.Servicios;
 using Microsoft.AspNetCore.Mvc;
+using ProyectoDiseñoSoft.Fabrica;
 
 namespace ProyectoDiseñoSoft.Controllers
 {
@@ -8,13 +9,13 @@ namespace ProyectoDiseñoSoft.Controllers
     [Route("api/Compras")]
     public class ComprasController : ControllerBase
     {
-        private readonly ComprasService _CompraService;
 
-        public ComprasController(ComprasService carrreraService)
+        private readonly IPersonaService<Compras> _CompraService;
+
+        public ComprasController(IPersonaService<Compras> comprasService)
         {
-            _CompraService = carrreraService;
+            _CompraService = comprasService;
         }
-
         [HttpGet]
         public async Task<List<Compras>> Get() =>
             await _CompraService.GetAsync();

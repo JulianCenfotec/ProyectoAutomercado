@@ -1,6 +1,7 @@
 ﻿using ProyectoDiseñoSoft.Modelos;
 using ProyectoDiseñoSoft.Servicios;
 using Microsoft.AspNetCore.Mvc;
+using ProyectoDiseñoSoft.Fabrica;
 
 namespace ProyectoDiseñoSoft.Controllers
 {
@@ -8,12 +9,11 @@ namespace ProyectoDiseñoSoft.Controllers
     [Route("api/grupos")]
     public class OrdenCompraController : Controller
     {
+        private readonly IPersonaService<OrdenCompra> _OrdenCompraService;
 
-        private readonly OrdenCompraService _OrdenCompraService;
-
-        public OrdenCompraController(OrdenCompraService OrdenCompraService) 
+        public OrdenCompraController(IPersonaService<OrdenCompra> ordenCompraService)
         {
-            _OrdenCompraService = OrdenCompraService;
+            _OrdenCompraService = ordenCompraService;
         }
         [HttpGet]
         public async Task<List<OrdenCompra>> Get() =>

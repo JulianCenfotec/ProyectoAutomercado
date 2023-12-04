@@ -1,10 +1,11 @@
 ﻿using ProyectoDiseñoSoft.Modelos;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
+using ProyectoDiseñoSoft.Fabrica;
 
 namespace ProyectoDiseñoSoft.Servicios
 {
-    public class ComprasService  
+    public class ComprasService  : IPersonaService<Compras>
     {
         private readonly IMongoCollection<Compras> _ComprasCollection;
 

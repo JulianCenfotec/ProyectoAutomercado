@@ -3,6 +3,7 @@ using ProyectoDiseñoSoft.Servicios;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using ProyectoDiseñoSoft.Fabrica;
 
 namespace ProyectoDiseñoSoft.Controllers
 {
@@ -10,13 +11,13 @@ namespace ProyectoDiseñoSoft.Controllers
     [ApiController]
     public class FacturacionController : Controller
     {
-        private readonly FacturacionService _FacturacionService;
 
-        public FacturacionController(FacturacionService FacturacionService)
+        private readonly IPersonaService<Facturacion> _FacturacionService;
+
+        public FacturacionController(IPersonaService<Facturacion> facturacionService)
         {
-            _FacturacionService = FacturacionService;
+            _FacturacionService = facturacionService;
         }
-
         [HttpGet]
         public async Task<ActionResult<List<Facturacion>>> Get()
         {
