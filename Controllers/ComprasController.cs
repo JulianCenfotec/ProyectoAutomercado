@@ -7,7 +7,7 @@ namespace ProyectoDiseñoSoft.Controllers
 {
     [ApiController]
     [Route("api/Compras")]
-    public class ComprasController : ControllerBase
+    public class ComprasController : Controller
     {
 
         private readonly IPersonaService<Compras> _CompraService;

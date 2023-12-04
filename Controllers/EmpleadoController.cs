@@ -9,9 +9,9 @@ using ProyectoDiseñoSoft.Fabrica;
 
 namespace ProyectoDiseñoSoft.Controllers
 {
-    [Route("api/Empleado")]
+    [Route("api/Empleados")]
     [ApiController]
-    public class EmpleadoController : ControllerBase
+    public class EmpleadoController : Controller
     {
 
         private readonly IPersonaService<Empleados> _EmpleadoService;
@@ -22,11 +22,8 @@ namespace ProyectoDiseñoSoft.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<Empleados>>> Get()
-        {
-            var Empleados = await _EmpleadoService.GetAsync();
-            return Ok(Empleados);
-        }
+        public async Task<List<Empleados>> Get() =>
+             await _EmpleadoService.GetAsync();
 
         [HttpGet("{id:length(24)}")]
         public async Task<ActionResult<Empleados>> Get(string id)

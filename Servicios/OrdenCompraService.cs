@@ -15,7 +15,7 @@ namespace ProyectoDiseñoSoft.Servicios
 
             var client = new MongoClient(settings.ConnectionString);
             var database = client.GetDatabase(settings.DatabaseName);
-            _OrdenCompraCollection = database.GetCollection<OrdenCompra>("OrdenCompra");
+            _OrdenCompraCollection = database.GetCollection<OrdenCompra>("Orden de Compra");
         }
 
         public async Task<List<OrdenCompra>> GetAsync() =>

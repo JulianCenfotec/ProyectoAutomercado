@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ProyectoDiseñoSoft.Controllers
 {
+    [ApiController]
+    [Route("api/Producto")]
     public class ProductoController : Controller
     {
         private readonly IPersonaService<Producto> _ProductoService;

@@ -17,7 +17,7 @@ namespace ProyectoDiseñoSoft.Servicios
 
             var client = new MongoClient(settings.ConnectionString);
             var database = client.GetDatabase(settings.DatabaseName);
-            _EmpleadoCollection = database.GetCollection<Empleados>("Empleado"); ;
+            _EmpleadoCollection = database.GetCollection<Empleados>("Empleados"); ;
         }
 
         public async Task<List<Empleados>> GetAsync() =>
