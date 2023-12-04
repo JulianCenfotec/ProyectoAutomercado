@@ -11,9 +11,9 @@ namespace ProyectoDiseñoSoft.Controllers
     {
         private readonly IPersonaService<Cliente> _ClienteService;
 
-        public ClienteController(IPersonaService<Cliente> ClienteService)
+        public ClienteController(IPersonaService<Cliente> clienteService)
         {
-            _ClienteService = ClienteService;
+            _ClienteService = clienteService;
         }
 
         [HttpGet]
@@ -74,3 +74,4 @@ namespace ProyectoDiseñoSoft.Controllers
         }
     }
 }
+

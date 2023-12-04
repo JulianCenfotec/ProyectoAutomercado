@@ -9,9 +9,9 @@ namespace ProyectoDiseñoSoft.Controllers
     {
         private readonly IPersonaService<Producto> _ProductoService;
 
-        public ProductoController(IPersonaService<Producto> ProductoService)
+        public ProductoController(IPersonaService<Producto> productoService)
         {
-            _ProductoService = ProductoService;
+            _ProductoService = productoService;
         }
 
         [HttpGet]

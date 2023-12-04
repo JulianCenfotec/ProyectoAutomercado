@@ -1,26 +1,23 @@
 ﻿using ProyectoDiseñoSoft.Modelos;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
+using ProyectoDiseñoSoft.Fabrica;
 
 namespace ProyectoDiseñoSoft.Servicios
 {
-    public class OrdenCompraService
+    public class OrdenCompraService : IPersonaService<OrdenCompra>
     {
         private readonly IMongoCollection<OrdenCompra> _OrdenCompraCollection;
 
-       /* public UserService(
-            IOptions<UniversidadDatabaseSettings> universidadDatabaseSettings)
+        public OrdenCompraService()
         {
-            var mongoClient = new MongoClient(
-                universidadDatabaseSettings.Value.ConnectionString);
+            var settings = DatabaseSettings.Instance;
 
-            var mongoDatabase = mongoClient.GetDatabase(
-                universidadDatabaseSettings.Value.DatabaseName);
-
-            _OrdenCompraCollection = mongoDatabase.GetCollection<User>(
-                universidadDatabaseSettings.Value.CollectionName);
+            var client = new MongoClient(settings.ConnectionString);
+            var database = client.GetDatabase(settings.DatabaseName);
+            _OrdenCompraCollection = database.GetCollection<OrdenCompra>("OrdenCompra");
         }
-       */
+
         public async Task<List<OrdenCompra>> GetAsync() =>
             await _OrdenCompraCollection.Find(_ => true).ToListAsync();
 

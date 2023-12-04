@@ -5,6 +5,7 @@ using MongoDB.Driver;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using ProyectoDiseñoSoft.Servicios;
+using ProyectoDiseñoSoft.Fabrica;
 
 namespace ProyectoDiseñoSoft.Controllers
 {
@@ -12,11 +13,12 @@ namespace ProyectoDiseñoSoft.Controllers
     [ApiController]
     public class EmpleadoController : ControllerBase
     {
-        private readonly EmpleadoService _EmpleadoService;
 
-        public EmpleadoController(EmpleadoService EmpleadoService)
+        private readonly IPersonaService<Empleados> _EmpleadoService;
+
+        public EmpleadoController(IPersonaService<Empleados> empleadoService)
         {
-            _EmpleadoService = EmpleadoService;
+            _EmpleadoService = empleadoService;
         }
 
         [HttpGet]

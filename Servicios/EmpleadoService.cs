@@ -3,10 +3,11 @@ using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using ProyectoDiseñoSoft.Fabrica;
 
 namespace ProyectoDiseñoSoft.Servicios
 {
-    public class EmpleadoService
+    public class EmpleadoService : IPersonaService<Empleados>
     {
         private readonly IMongoCollection<Empleados> _EmpleadoCollection;
 

@@ -6,19 +6,23 @@ namespace ProyectoDiseñoSoft.Modelos
     public class Cliente : IObserver<String>
     {
         [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
+        [BsonElement("_id")]
         public string? _id { get; set; }
 
-        [BsonElement("Nombre")]
+        [BsonElement("nombre")]
         public string Nombre { get; set; } = null!;
 
-        [BsonElement("Telefono")]
+        [BsonElement("cedula")]
+        public int Cedula { get; set; }
+
+       
+        [BsonElement("telefono")]
         public int Telefono { get; set; }
 
-        [BsonElement("Direccion")]
+        [BsonElement("direccion")]
         public string Direccion { get; set; } = null!;
 
-        [BsonElement("Email")]
+        [BsonElement("email")]
         public string Email { get; set; }
 
 

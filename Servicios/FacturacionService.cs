@@ -4,9 +4,11 @@ using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using ProyectoDiseñoSoft.Fabrica;
+
 namespace ProyectoDiseñoSoft.Servicios
 {
-    public class FacturacionService
+    public class FacturacionService : IPersonaService<Facturacion>
     {
         private readonly IMongoCollection<Facturacion>_FacturacionCollection;
 
@@ -35,4 +37,5 @@ namespace ProyectoDiseñoSoft.Servicios
         public async Task RemoveAsync(string id) =>
             await _FacturacionCollection.DeleteOneAsync(x => x._id == id);
     }
+    
 }
