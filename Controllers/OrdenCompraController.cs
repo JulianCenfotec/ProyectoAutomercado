@@ -6,7 +6,7 @@ using ProyectoDiseñoSoft.Fabrica;
 namespace ProyectoDiseñoSoft.Controllers
 {
     [ApiController]
-    [Route("api/grupos")]
+    [Route("api/OrdenCompra")]
     public class OrdenCompraController : Controller
     {
         private readonly IPersonaService<OrdenCompra> _OrdenCompraService;

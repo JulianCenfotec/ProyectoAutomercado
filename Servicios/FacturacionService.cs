@@ -18,7 +18,7 @@ namespace ProyectoDiseñoSoft.Servicios
 
             var client = new MongoClient(settings.ConnectionString);
             var database = client.GetDatabase(settings.DatabaseName);
-           _FacturacionCollection = database.GetCollection<Facturacion>("Facturacion");
+           _FacturacionCollection = database.GetCollection<Facturacion>("Facturación");
         }
 
         public async Task<List<Facturacion>> GetAsync() =>

@@ -7,7 +7,7 @@ using ProyectoDiseñoSoft.Fabrica;
 
 namespace ProyectoDiseñoSoft.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/Facturacion")]
     [ApiController]
     public class FacturacionController : Controller
     {
@@ -19,11 +19,8 @@ namespace ProyectoDiseñoSoft.Controllers
             _FacturacionService = facturacionService;
         }
         [HttpGet]
-        public async Task<ActionResult<List<Facturacion>>> Get()
-        {
-            var Facturacions = await _FacturacionService.GetAsync();
-            return Ok(Facturacions);
-        }
+        public async Task<List<Facturacion>> Get() =>
+             await _FacturacionService.GetAsync();
 
         [HttpGet("{id:length(24)}")]
         public async Task<ActionResult<Facturacion>> Get(string Codigo)

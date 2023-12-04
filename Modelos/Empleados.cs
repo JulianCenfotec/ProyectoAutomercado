@@ -7,7 +7,7 @@ namespace ProyectoDiseñoSoft.Modelos
     {
         [BsonId]
         [BsonElement("_id")]
-        public string? _id { get; set; }
+        public string _id { get; set; }
 
         [BsonElement("nombre")]
         public string nombre { get; set; }
