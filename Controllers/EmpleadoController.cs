@@ -25,7 +25,7 @@ namespace ProyectoDiseñoSoft.Controllers
         public async Task<List<Empleados>> Get() =>
              await _EmpleadoService.GetAsync();
 
-        [HttpGet("{id:length(24)}")]
+        [HttpGet("{id}")]
         public async Task<ActionResult<Empleados>> Get(string id)
         {
             var Empleado = await _EmpleadoService.GetAsync(id);
@@ -46,7 +46,7 @@ namespace ProyectoDiseñoSoft.Controllers
             return CreatedAtAction(nameof(Get), new { id = newEmpleado._id }, newEmpleado);
         }
 
-        [HttpPut("{id:length(24)}")]
+        [HttpPut("{id}")]
         public async Task<IActionResult> Update(string id, Empleados updatedEmpleado)
         {
             var Empleado = await _EmpleadoService.GetAsync(id);
@@ -63,7 +63,7 @@ namespace ProyectoDiseñoSoft.Controllers
             return NoContent();
         }
 
-        [HttpDelete("{id:length(24)}")]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(string id)
         {
             var Empleado = await _EmpleadoService.GetAsync(id);

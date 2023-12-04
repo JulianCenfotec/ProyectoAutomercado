@@ -22,7 +22,7 @@ namespace ProyectoDiseñoSoft.Controllers
         public async Task<List<Facturacion>> Get() =>
              await _FacturacionService.GetAsync();
 
-        [HttpGet("{id:length(24)}")]
+        [HttpGet("{id}")]
         public async Task<ActionResult<Facturacion>> Get(string Codigo)
         {
             var Facturacion = await _FacturacionService.GetAsync(Codigo);
@@ -43,7 +43,7 @@ namespace ProyectoDiseñoSoft.Controllers
             return CreatedAtAction(nameof(Get), new { id = newFacturacion._id }, newFacturacion);
         }
 
-        [HttpPut("{id:length(24)}")]
+        [HttpPut("{id}")]
         public async Task<IActionResult> Update(string Codigo, Facturacion updatedFacturacion)
         {
             var Facturacion = await _FacturacionService.GetAsync(Codigo);
@@ -60,7 +60,7 @@ namespace ProyectoDiseñoSoft.Controllers
             return NoContent();
         }
 
-        [HttpDelete("{id:length(24)}")]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(string id)
         {
             var Facturacion = await _FacturacionService.GetAsync(id);

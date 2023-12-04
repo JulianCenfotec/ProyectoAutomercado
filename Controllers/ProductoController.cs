@@ -20,7 +20,7 @@ namespace ProyectoDiseñoSoft.Controllers
         public async Task<List<Producto>> Get() =>
             await _ProductoService.GetAsync();
 
-        [HttpGet("{id:length(24)}")]
+        [HttpGet("{id}")]
         public async Task<ActionResult<Producto>> Get(string id)
         {
             var user = await _ProductoService.GetAsync(id);
@@ -41,7 +41,7 @@ namespace ProyectoDiseñoSoft.Controllers
             return CreatedAtAction(nameof(Get), new { id = newProducto._id }, newProducto);
         }
 
-        [HttpPut("{id:length(24)}")]
+        [HttpPut("{id}")]
         public async Task<IActionResult> Update(string id, Producto updatedProducto)
         {
             var user = await _ProductoService.GetAsync(id);
@@ -58,7 +58,7 @@ namespace ProyectoDiseñoSoft.Controllers
             return NoContent();
         }
 
-        [HttpDelete("{id:length(24)}")]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(string id)
         {
             var user = await _ProductoService.GetAsync(id);
