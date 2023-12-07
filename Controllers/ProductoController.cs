@@ -72,5 +72,29 @@ namespace ProyectoDiseñoSoft.Controllers
 
             return NoContent();
         }
+
+        [HttpPost("{id}/comprar")]
+        public async Task<IActionResult> Comprar(string id)
+        {
+            var producto = await _ProductoService.GetAsync(id);
+
+            if (producto is null)
+            {
+                return NotFound();
+            }
+
+            if (producto.cantidad <= 0)
+            {
+                return BadRequest("Producto no disponible.");
+            }
+
+            producto.cantidad--; // Reducir la cantidad
+            await _ProductoService.UpdateAsync(id, producto);
+
+            
+
+            return Ok("Compra realizada con éxito");
+        }
+
     }
 }
